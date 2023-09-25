@@ -15,10 +15,14 @@ import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Scaffold
 import androidx.compose.material3.Surface
 import androidx.compose.material3.Text
+import androidx.compose.material3.TopAppBarDefaults
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.draw.shadow
+import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.tooling.preview.Preview
+import androidx.compose.ui.unit.dp
 import com.davecon.reelview.ui.theme.ReelViewTheme
 
 class MainActivity : ComponentActivity() {
@@ -45,6 +49,10 @@ fun ReelViewApp(content: @Composable () -> Unit) {
             modifier = Modifier.fillMaxSize(),
             topBar = {
                 CenterAlignedTopAppBar(
+                    modifier = Modifier.shadow(16.dp),
+                    colors = TopAppBarDefaults.centerAlignedTopAppBarColors(
+                        containerColor = Color.LightGray
+                    ),
                     title = {
                         Text(
                             text = "ReelView App",
@@ -73,7 +81,7 @@ fun ReelViewApp(content: @Composable () -> Unit) {
             }
         ) { innerPadding ->
             val padding = innerPadding
-            MainContent()
+            content()
         }
     }
 }
