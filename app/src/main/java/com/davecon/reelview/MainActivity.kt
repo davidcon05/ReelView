@@ -3,14 +3,12 @@ package com.davecon.reelview
 import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
+import androidx.compose.foundation.layout.WindowInsets
 import androidx.compose.foundation.layout.fillMaxSize
-import androidx.compose.material.icons.Icons
-import androidx.compose.material.icons.filled.Favorite
-import androidx.compose.material.icons.filled.Menu
+import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.layout.systemBars
 import androidx.compose.material3.CenterAlignedTopAppBar
 import androidx.compose.material3.ExperimentalMaterial3Api
-import androidx.compose.material3.Icon
-import androidx.compose.material3.IconButton
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Scaffold
 import androidx.compose.material3.Surface
@@ -46,7 +44,7 @@ class MainActivity : ComponentActivity() {
 fun ReelViewApp(content: @Composable () -> Unit) {
     ReelViewTheme {
         Scaffold(
-            modifier = Modifier.fillMaxSize(),
+            modifier = Modifier,
             topBar = {
                 CenterAlignedTopAppBar(
                     modifier = Modifier.shadow(16.dp),
@@ -61,26 +59,11 @@ fun ReelViewApp(content: @Composable () -> Unit) {
                             modifier = Modifier,
                         )
                     },
-                    navigationIcon = {
-                        IconButton(onClick = { /* doSomething() */ }) {
-                            Icon(
-                                imageVector = Icons.Filled.Menu,
-                                contentDescription = "Localized description"
-                            )
-                        }
-                    },
-                    actions = {
-                        IconButton(onClick = { /* doSomething() */ }) {
-                            Icon(
-                                imageVector = Icons.Filled.Favorite,
-                                contentDescription = "Localized description"
-                            )
-                        }
-                    }
+                    windowInsets = WindowInsets.Companion.systemBars,
                 )
             }
         ) { innerPadding ->
-            val padding = innerPadding
+            val innerPadding = innerPadding
             content()
         }
     }
@@ -88,17 +71,20 @@ fun ReelViewApp(content: @Composable () -> Unit) {
 
 @Composable
 fun MainContent() {
-    Surface(modifier = Modifier, color = MaterialTheme.colorScheme.background) {
-        Text("Hello Reel View app!")
+    Surface(
+        modifier = Modifier
+            .fillMaxSize()
+            .padding(56.dp),
+        color = MaterialTheme.colorScheme.background
+    ) {
+        Text("Hello Reel View app!1\n")
     }
 }
 
 @Preview(showBackground = true)
 @Composable
 fun ReelViewPreview() {
-    ReelViewTheme {
-        ReelViewApp {
-            MainContent()
-        }
+    ReelViewApp {
+        MainContent()
     }
 }
