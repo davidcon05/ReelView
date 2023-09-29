@@ -22,6 +22,7 @@ import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.unit.dp
 import androidx.navigation.NavController
 import com.davecon.reelview.components.MovieRow
+import com.davecon.reelview.navigation.MovieScreens
 import com.davecon.reelview.navigation.ReelViewNavigation
 
 @Composable
@@ -74,6 +75,7 @@ fun MainContent(
         ) {
             items(movieList.size) { movie ->
                 MovieRow(movieName = movieList[movie]) { movie ->
+                    navController.navigate(route = MovieScreens.DETAILS.name+"/$movie")
                     Log.d("ReelView", "Movie clicked: $movie")
                 }
             }

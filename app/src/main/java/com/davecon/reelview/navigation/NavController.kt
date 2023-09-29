@@ -1,9 +1,12 @@
 package com.davecon.reelview.navigation
 
 import androidx.compose.runtime.Composable
+import androidx.navigation.NavType
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
+import androidx.navigation.navArgument
+import com.davecon.reelview.screens.DetailsScreen
 import com.davecon.reelview.screens.HomeScreen
 
 /**
@@ -25,6 +28,13 @@ fun ReelViewNavigation() {
         composable(MovieScreens.HOME.name) {
             // Back stack graph entry, we have to pass the composable for this screen
             HomeScreen(navController)
+        }
+
+        composable(
+            MovieScreens.DETAILS.name + "/{movie}",
+            arguments = listOf(navArgument("movie") { type = NavType.StringType })
+        ) {
+            DetailsScreen(navController, it.arguments?.getString("movie") ?: "")
         }
     }
 }

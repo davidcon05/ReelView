@@ -9,13 +9,13 @@ import java.lang.IllegalArgumentException
  */
 enum class MovieScreens {
     HOME,
-    DETAIL;
+    DETAILS;
 
     companion object {
         fun fromRoute(route: String?): MovieScreens =
             when (route?.substringBefore("/")) {
                 HOME.name -> HOME
-                DETAIL.name -> DETAIL
+                DETAILS.name -> DETAILS
                 null -> throw IllegalArgumentException("Route: $route cannot be null")
                 else -> HOME
             }
