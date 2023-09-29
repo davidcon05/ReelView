@@ -1,7 +1,6 @@
 package com.davecon.reelview.navigation
 
 import androidx.compose.runtime.Composable
-import androidx.navigation.NavController
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
@@ -18,7 +17,7 @@ import com.davecon.reelview.screens.HomeScreen
  * we build the nav graph.
  */
 @Composable
-fun Navigation() {
+fun ReelViewNavigation() {
     //
     val navController = rememberNavController()
     NavHost(navController = navController, startDestination = MovieScreens.HOME.name) {

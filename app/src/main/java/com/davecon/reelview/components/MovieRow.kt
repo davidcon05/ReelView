@@ -73,7 +73,5 @@ fun MovieRow(movieName: String, onItemClick: (String) -> Unit = {}) {
                 style = MaterialTheme.typography.headlineSmall
             )
         }
-
-
     }
 }

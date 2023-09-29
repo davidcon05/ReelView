@@ -22,7 +22,7 @@ import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.unit.dp
 import androidx.navigation.NavController
 import com.davecon.reelview.components.MovieRow
-import com.davecon.reelview.navigation.Navigation
+import com.davecon.reelview.navigation.ReelViewNavigation
 
 @Composable
 fun HomeScreen(navController: NavController, content: @Composable () -> Unit = {}) {
@@ -47,7 +47,7 @@ fun HomeScreen(navController: NavController, content: @Composable () -> Unit = {
         }
     ) { innerPadding ->
         val innerPadding = innerPadding
-        Navigation()
+        MainContent(navController = navController)
     }
 }
 
