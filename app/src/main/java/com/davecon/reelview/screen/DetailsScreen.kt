@@ -145,7 +145,7 @@ fun DetailContent(movie: Movie) {
             Text(
                 modifier = Modifier,
                 text = movie.plot,
-                style = MaterialTheme.typography.bodyMedium
+                style = MaterialTheme.typography.bodyLarge
             )
         }
 
