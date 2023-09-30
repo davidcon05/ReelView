@@ -5,7 +5,7 @@ want to learn for Android development. In this case, I'm focusing
 on: TopAppBar, Navigation, displaying data. 
 
 ## To do
-This app pulls data from themoviedb.org. It would be nice to leverage
+This app pulls data from [https://www.omdbapi.com/](https://www.omdbapi.com/). It would be nice to leverage
 some of those API features.
 - Pull live data from the API
 - Use clicking on a card to give give live details

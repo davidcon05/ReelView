@@ -23,10 +23,11 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.RectangleShape
 import androidx.compose.ui.unit.dp
+import com.davecon.reelview.model.Movie
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
-fun MovieRow(movieName: String, onItemClick: (String) -> Unit = {}) {
+fun MovieRow(movie: Movie, onItemClick: (String) -> Unit = {}) {
     Card(
         modifier = Modifier
             .fillMaxWidth()
@@ -44,7 +45,7 @@ fun MovieRow(movieName: String, onItemClick: (String) -> Unit = {}) {
             disabledElevation = 0.dp,
         ),
         onClick = {
-            onItemClick(movieName)
+            onItemClick(movie.title)
         }
     ) {
         Row(
@@ -68,7 +69,7 @@ fun MovieRow(movieName: String, onItemClick: (String) -> Unit = {}) {
                 )
             }
             Text(
-                text = movieName,
+                text = movie.title,
                 modifier = Modifier,
                 style = MaterialTheme.typography.headlineSmall
             )
