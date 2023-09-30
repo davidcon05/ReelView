@@ -1,4 +1,4 @@
-package com.davecon.reelview.components
+package com.davecon.reelview.component
 
 import androidx.compose.material3.CenterAlignedTopAppBar
 import androidx.compose.material3.ExperimentalMaterial3Api

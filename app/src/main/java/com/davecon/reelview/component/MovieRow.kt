@@ -1,4 +1,4 @@
-package com.davecon.reelview.components
+package com.davecon.reelview.component
 
 import androidx.compose.foundation.border
 import androidx.compose.foundation.layout.Arrangement

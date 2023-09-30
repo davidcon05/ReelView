@@ -6,8 +6,8 @@ import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
 import androidx.navigation.navArgument
-import com.davecon.reelview.screens.DetailsScreen
-import com.davecon.reelview.screens.HomeScreen
+import com.davecon.reelview.screen.DetailsScreen
+import com.davecon.reelview.screen.HomeScreen
 
 /**
  * Navigation component consists of three things

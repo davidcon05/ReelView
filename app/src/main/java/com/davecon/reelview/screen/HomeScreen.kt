@@ -1,6 +1,6 @@
 @file:OptIn(ExperimentalMaterial3Api::class)
 
-package com.davecon.reelview.screens
+package com.davecon.reelview.screen
 
 import android.util.Log
 import androidx.compose.foundation.layout.Column
@@ -13,8 +13,8 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
 import androidx.navigation.NavController
-import com.davecon.reelview.components.MovieRow
-import com.davecon.reelview.components.reelViewAppBar
+import com.davecon.reelview.component.MovieRow
+import com.davecon.reelview.component.reelViewAppBar
 import com.davecon.reelview.navigation.MovieScreens
 
 @Composable
@@ -34,7 +34,6 @@ fun HomeScreen(navController: NavController, content: @Composable () -> Unit = {
 fun MainContent(
     movieList: List<String> = listOf(
         "Nightmare Before Christmas",
-        "Halloween Town",
         "Friday the 13th",
         "Halloween",
         "Hocus Pocus",

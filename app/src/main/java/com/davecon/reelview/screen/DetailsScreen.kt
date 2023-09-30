@@ -1,4 +1,4 @@
-package com.davecon.reelview.screens
+package com.davecon.reelview.screen
 
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Arrangement
@@ -16,7 +16,7 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.sp
 import androidx.navigation.NavHostController
-import com.davecon.reelview.components.reelViewAppBar
+import com.davecon.reelview.component.reelViewAppBar
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
