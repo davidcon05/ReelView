@@ -6,6 +6,7 @@ import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
 import androidx.navigation.navArgument
+import com.davecon.reelview.model.Movie
 import com.davecon.reelview.screen.DetailsScreen
 import com.davecon.reelview.screen.HomeScreen
 
