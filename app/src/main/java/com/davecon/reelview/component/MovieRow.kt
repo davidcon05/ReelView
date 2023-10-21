@@ -1,6 +1,8 @@
 package com.davecon.reelview.component
 
 import androidx.compose.animation.AnimatedVisibility
+import androidx.compose.animation.ExperimentalAnimationApi
+import androidx.compose.animation.scaleIn
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.border
 import androidx.compose.foundation.clickable
@@ -31,9 +33,11 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.Color.Companion.Black
 import androidx.compose.ui.graphics.RectangleShape
+import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
+import coil.annotation.ExperimentalCoilApi
 import coil.compose.rememberImagePainter
 import coil.size.Scale
 import coil.transform.CircleCropTransformation
@@ -41,7 +45,7 @@ import com.davecon.reelview.model.Movie
 import com.davecon.reelview.model.getMovies
 
 @Preview
-@OptIn(ExperimentalMaterial3Api::class, coil.annotation.ExperimentalCoilApi::class)
+@OptIn(ExperimentalMaterial3Api::class, ExperimentalCoilApi::class, ExperimentalAnimationApi::class)
 @Composable
 fun MovieRow(movie: Movie = getMovies()[0]/*Movie*/, onItemClick: (String) -> Unit = {}) {
     var expanded by remember { mutableStateOf(false) }
@@ -86,6 +90,7 @@ fun MovieRow(movie: Movie = getMovies()[0]/*Movie*/, onItemClick: (String) -> Un
                             scale(Scale.FIT)
                         }),
                     contentDescription = "Movie Thumbnail",
+                    contentScale = ContentScale.Fit
                 )
             }
 
