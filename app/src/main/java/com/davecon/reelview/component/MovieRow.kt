@@ -2,6 +2,7 @@ package com.davecon.reelview.component
 
 import androidx.compose.animation.AnimatedVisibility
 import androidx.compose.animation.ExperimentalAnimationApi
+import androidx.compose.animation.core.animateDpAsState
 import androidx.compose.animation.scaleIn
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.border
@@ -43,12 +44,16 @@ import coil.size.Scale
 import coil.transform.CircleCropTransformation
 import com.davecon.reelview.model.Movie
 import com.davecon.reelview.model.getMovies
+import kotlin.math.exp
 
 @Preview
 @OptIn(ExperimentalMaterial3Api::class, ExperimentalCoilApi::class, ExperimentalAnimationApi::class)
 @Composable
 fun MovieRow(movie: Movie = getMovies()[0]/*Movie*/, onItemClick: (String) -> Unit = {}) {
     var expanded by remember { mutableStateOf(false) }
+    val extraPadding by animateDpAsState(
+        if (expanded) 16.dp else 0.dp
+    )
     Card(
         modifier = Modifier
             .fillMaxWidth()
@@ -96,7 +101,7 @@ fun MovieRow(movie: Movie = getMovies()[0]/*Movie*/, onItemClick: (String) -> Un
 
             Column(
                 modifier = Modifier
-                    .padding(4.dp)
+                    .padding(extraPadding)
                     .fillMaxWidth()
             ) {
                 Text(
@@ -121,6 +126,7 @@ fun MovieRow(movie: Movie = getMovies()[0]/*Movie*/, onItemClick: (String) -> Un
                     Icon(
                         modifier = Modifier
                             .align(Alignment.End)
+                            .padding(end = 16.dp)
                             .size(24.dp)
                             .clickable(
                                 onClick = {
